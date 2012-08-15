@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'password';
-$db['default']['database'] = 'tagit_core';
+$db['default']['password'] = 'avipar';
+$db['default']['database'] = 'proximity_marketing';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
