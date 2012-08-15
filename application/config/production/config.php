@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://50.112.72.254/proximity-marketing/';
+$config['base_url']	= 'http://50.112.72.254/';
 
 /*
 |--------------------------------------------------------------------------
