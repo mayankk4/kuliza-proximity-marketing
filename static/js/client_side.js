@@ -1,5 +1,5 @@
 var url = document.URL;
-var base_url = 'http://ec2-54-251-10-149.ap-southeast-1.compute.amazonaws.com';
+var base_url : "http://demo.echo.kuliza.com",
 var params = client_options;
 
 var html ="";
