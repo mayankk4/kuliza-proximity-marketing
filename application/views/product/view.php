@@ -1,5 +1,8 @@
 <?php $this->load->view("/elements/header") ?>
 
+
+	<link rel="stylesheet" type="text/css" href="http://demo.echo.kuliza.com/css/buttons.css" />
+
 	<div id="echo-se"> </div>
 
 	<input type="button" value="ACTION 1" class="action" />
@@ -26,7 +29,7 @@
 		var base_url = "http://demo.echo.kuliza.com";
 		var url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
 
-</script>
+	</script>
 
 	<script type='text/javascript'>
 
@@ -75,10 +78,10 @@
 ////////////// g u p t a //////////////
 
 var client_options = {
-                  productName : "Sony VAIO",
-                  productCategory : "Electronics",
-                    productId : "2071",
-                    productImg : "SONY VAIO IMAGE URL",
+                  name : "Sony VAIO",
+                  category : "Electronics",
+                    id : "2071",
+                    img : "SONY VAIO IMAGE URL",
                     objectType : "product"
                 };
 
@@ -90,7 +93,7 @@ var result = jq.ajax({
     success : function(data){
         // We dont parse json object sent when json-p is used because it already is in Object format.
  		console.log(data);
- 		var js_append = "<script src='\/static\/js\/fb_sharing.js'><\/script><script src='\/static\/js\/jquery.ba-postmessage.min.js'><\/script>";
+ 		var js_append = "<script src='\/static\/js\/fb_sharing.js'><\/script><script src='\/static\/js\/jquery.ba-postmessage.min.js'><\/script><script src='\/static\/js\/client_side.js'><\/script>";
        jq('#echo-se').html(data.html + js_append);
     },
     error : function(xhr, textStatus, error){

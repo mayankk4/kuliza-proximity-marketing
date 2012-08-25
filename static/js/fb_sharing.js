@@ -212,9 +212,9 @@ var ZS ={
     var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
     var frame = jq("#isLoggedIn_frame");
     if (frame.length == 0){
-      jq('body').append('<iframe width="400" height="300" src="' + base_url + '/fshare/is_logged_in/?product_url=' + product_url + '" id="isLoggedIn_frame" class="hidden"></iframe>');
+      jq('body').append('<iframe width="400" height="300" src="' + base_url + '/fshare/is_logged_in/?product_url=' + product_url + '&tag_it_url=' + window.location.href + '" id="isLoggedIn_frame" class="hidden"></iframe>');
     }else{
-      frame.attr('src',base_url+'/fshare/is_logged_in/?product_url='+product_url);
+      frame.attr('src',base_url+'/fshare/is_logged_in/?product_url='+product_url + '&tag_it_url=' + window.location.href);
     }
   }
 };
