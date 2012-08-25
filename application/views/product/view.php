@@ -29,6 +29,13 @@
 		var base_url = "http://demo.echo.kuliza.com";
 		var url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
 
+		var client_options = {
+                  name : "Sony VAIO",
+                  category : "Electronics",
+                    id : "2071",
+                    img : "SONY VAIO IMAGE URL",
+                    objectType : "product"
+                };
 	</script>
 
 	<script src='/static/js/fb_sharing.js'></script>
@@ -82,18 +89,13 @@
 
 ////////////// g u p t a //////////////
 
-var client_options = {
-                  name : "Sony VAIO",
-                  category : "Electronics",
-                    id : "2071",
-                    img : "SONY VAIO IMAGE URL",
-                    objectType : "product"
-                };
+
+var url_this = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
 
 var result = jq.ajax({
     url: base_url + '/client/buttons',
     type: 'GET',
-    data : { 'params' : client_options, 'url' : url},
+    data : { 'params' : client_options, 'url' : url_this},
     dataType: "jsonp",
     success : function(data){
         // We dont parse json object sent when json-p is used because it already is in Object format.
