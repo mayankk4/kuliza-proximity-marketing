@@ -22,6 +22,9 @@
 
 	<p>Description : <span id="description"> </span></p>
 
+
+	<script src="/static/js/jquery.ba-postmessage.min.js"></script>
+
 	<script type='text/javascript'>
 
 		var jq = jQuery.noConflict();
@@ -98,7 +101,6 @@
 	        // We dont parse json object sent when json-p is used because it already is in Object format.
 	 		// console.log(data);
 	 		var js_append = '<script src="\/static\/js/fb_sharing.js"><\/script>';
-	 	 	js_append = js_append  + '<script src="\/static\/js\/jquery.ba-postmessage.min.js"><\/script>';
 	 	 	// console.log(js_append);
 	       jq('#echo-se').html(data.html + js_append);
 	    },
@@ -108,7 +110,6 @@
 	        // alert(textStatus);
 	    }
 	});
-
 
 	jq.receiveMessage(
 	  function(e){
@@ -135,6 +136,7 @@
 	  },
 	  'http://demo.echo.kuliza.com'
 	);
+
 
 });
 </script>
