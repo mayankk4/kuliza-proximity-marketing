@@ -38,9 +38,6 @@
                 };
 	</script>
 
-	<script src='/static/js/fb_sharing.js'></script>
-	<script src='/static/js/jquery.ba-postmessage.min.js'></script>
-	<script src='/static/js/client_side.js'></script>
 
 
 	<script type='text/javascript'>
@@ -100,8 +97,8 @@ var result = jq.ajax({
     success : function(data){
         // We dont parse json object sent when json-p is used because it already is in Object format.
  		console.log(data);
- 		// var js_append = "<script src='\/static\/js\/fb_sharing.js'><\/script><script src='\/static\/js\/jquery.ba-postmessage.min.js'><\/script><script src='\/static\/js\/client_side.js'><\/script>";
-       jq('#echo-se').html(data.html);
+ 	 	var js_append = '<script src="/static/js/fb_sharing.js"></script><script src="/static/js/jquery.ba-postmessage.min.js"></script><script src="/static/js/client_side.js"></script>';
+       jq('#echo-se').html(data.html + js_append);
     },
     error : function(xhr, textStatus, error){
         // alert(xhr);
