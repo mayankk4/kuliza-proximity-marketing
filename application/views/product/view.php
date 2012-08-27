@@ -99,7 +99,6 @@
 	 		// console.log(data);
 	 		var js_append = '<script src="\/static\/js/fb_sharing.js"><\/script>';
 	 	 	js_append = js_append  + '<script src="\/static\/js\/jquery.ba-postmessage.min.js"><\/script>';
-	 	 	js_append = js_append + '<script src="\/static\/js\/client_side.js"><\/script>';
 	 	 	// console.log(js_append);
 	       jq('#echo-se').html(data.html + js_append);
 	    },
@@ -109,6 +108,33 @@
 	        // alert(textStatus);
 	    }
 	});
+
+
+	jq.receiveMessage(
+	  function(e){
+	    var obj = JSON.parse('{"' + decodeURI(e.data.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');
+	    if(obj.type == 'is_logged_in'){
+	        ZS.is_logged_in = obj.status;
+	        ZS.shareOn("post-action");
+	    } else {
+	        //code to disable the button
+	        //action = obj.action;
+	        //post_status = obj.status;
+	        var action = obj.action;
+	        var post_status = obj.status;
+	        if(post_status == false || post_status == 'false'){
+	            // alert('post was not published');
+	        } else {
+	            jq('.echo-loader-li').hide();
+	            jq('.echo-button-'+action).addClass('echo-buttons-disabled');
+				jq('.echo-button-'+action).attr('href', '#');
+	        }  
+	        //in both the cases close this popup
+	        //$('.closeButton').click();
+	    }
+	  },
+	  'http://demo.echo.kuliza.com'
+	);
 
 });
 </script>
