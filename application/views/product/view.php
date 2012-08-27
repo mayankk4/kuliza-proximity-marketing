@@ -96,11 +96,11 @@
 	    dataType: "jsonp",
 	    success : function(data){
 	        // We dont parse json object sent when json-p is used because it already is in Object format.
-	 		console.log(data);
-	 	 	var js_append = '<script src="/static/js/fb_sharing.js"></script>';
-	 	 	js_append = js_append  + '<script src="/static/js/jquery.ba-postmessage.min.js"></script>';
-	 	 	js_append = js_append + '<script src="/static/js/client_side.js"></script>';
-	 	 	console.log(js_append);
+	 		// console.log(data);
+	 		var js_append = '<script src="\/static\/js/fb_sharing.js"><\/script>';
+	 	 	js_append = js_append  + '<script src="\/static\/js\/jquery.ba-postmessage.min.js"><\/script>';
+	 	 	js_append = js_append + '<script src="\/static\/js\/client_side.js"><\/script>';
+	 	 	// console.log(js_append);
 	       jq('#echo-se').html(data.html + js_append);
 	    },
 	    error : function(xhr, textStatus, error){
