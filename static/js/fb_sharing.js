@@ -67,9 +67,9 @@ var ZS ={
       var referrer = "http://magento.shoppul.se/";
       var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
       if(window.location.hash!=""){
-        product_url = product_url.split(window.location.hash)[0];
+        url = url.split(window.location.hash)[0];
       }
-      var fb_params = "referrer="+referrer+"&product_name="+client_options.productName+"&object_type="+client_options.objectType+"&product_url="+product_url+"&product_category="+client_options.productCategory+"&product_id="+client_options.productId+"&og_action="+ZS.og_action+"&product_img="+client_options.productImg;
+      var fb_params = "referrer="+referrer+"&name="+client_options.name+"&object_type="+client_options.objectType+"&url="+product_url+"&category="+client_options.category+"&id="+client_options.id+"&og_action="+ZS.og_action+"&img="+client_options.img;
       if(ZS.is_logged_in === 'true'){
         var frame = jq("#postAction_frame");
         if(frame.length == 0){
@@ -95,7 +95,7 @@ var ZS ={
           jq('#fbLoginPopup').fadeIn('fast');        
 */
           //DODO convert to iframe
-          window.open(base_url + "/fshare/open_action/?" + fb_params, "_blank");
+          var win = window.open(base_url + "/fshare/open_action/?" + fb_params, "_blank");
       }
     },
     fbWall : function() {
@@ -205,7 +205,6 @@ var ZS ={
     else result = true;    // if params == 'message' there is pretty much nothing to do, hence we ignore that.
     return result;
   },
-
   isLoggedIn : function(og_action) {
     ZS.og_action = og_action;
     jq('.buttons_loader').show();
