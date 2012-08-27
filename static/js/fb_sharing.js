@@ -64,7 +64,7 @@ var ZS ={
   postTo : {
     action : function() {
       // var product_url = window.location.href;
-      var referrer = "http://magento.shoppul.se/";
+      var referrer = "magento.shoppul.se";
       var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
       if(window.location.hash!=""){
         url = url.split(window.location.hash)[0];
