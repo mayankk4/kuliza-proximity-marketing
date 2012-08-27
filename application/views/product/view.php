@@ -30,7 +30,7 @@
 		var url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
 
 		var client_options = {
-                  name : "Sony VAIO",
+                  name : "Sonssy VAIO",
                   category : "Electronics",
                     id : "2071",
                     img : "SONY VAIO IMAGE URL",
