@@ -87,32 +87,29 @@
 ////////////// g u p t a //////////////
 
 
-var url_this = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
+	var url_this = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
 
-var result = jq.ajax({
-    url: base_url + '/client/buttons',
-    type: 'GET',
-    data : { 'params' : client_options, 'url' : url_this},
-    dataType: "jsonp",
-    success : function(data){
-        // We dont parse json object sent when json-p is used because it already is in Object format.
- 		console.log(data);
- 	 	var js_append = '<script src="/static/js/fb_sharing.js"></script><script src="/static/js/jquery.ba-postmessage.min.js"></script><script src="/static/js/client_side.js"></script>';
-       jq('#echo-se').html(data.html + js_append);
-    },
-    error : function(xhr, textStatus, error){
-        // alert(xhr);
-        // alert(error);
-        // alert(textStatus);
-    }
-}); 
+	var result = jq.ajax({
+	    url: base_url + '/client/buttons',
+	    type: 'GET',
+	    data : { 'params' : client_options, 'url' : url_this},
+	    dataType: "jsonp",
+	    success : function(data){
+	        // We dont parse json object sent when json-p is used because it already is in Object format.
+	 		console.log(data);
+	 	 	var js_append = '<script src="/static/js/fb_sharing.js"></script>';
+	 	 	js_append = js_append  + '<script src="/static/js/jquery.ba-postmessage.min.js"></script>';
+	 	 	js_append = js_append + '<script src="/static/js/client_side.js"></script>';
+	 	 	console.log(js_append);
+	       jq('#echo-se').html(data.html + js_append);
+	    },
+	    error : function(xhr, textStatus, error){
+	        // alert(xhr);
+	        // alert(error);
+	        // alert(textStatus);
+	    }
+	});
 
-
-
-
-
-
-
-      	});
-	</script>
+});
+</script>
 <?php $this->load->view("/elements/footer"); ?>
