@@ -57,7 +57,7 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 		        	data: { id: prod_id, owner_id: owner_id, objectType: objectType, category: category, product_id: product_id, name: name , url: url, image_url: image_url, description: description },
 		            success: function(data){
 		            	if(data){
-			            	window.location = "/product/view/" + prod_id;
+			            	window.location = "/product/view/" + encode64(prod_id);
 		            	}else{
 			            	window.location = "/404";
 		            	}
