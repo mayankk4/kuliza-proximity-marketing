@@ -9,8 +9,10 @@ class Product extends CI_Controller {
 		$this->load->model('owners', 'OWNERS');
 
 	}
-	public function view($id)
+	public function view($id_encoded)
 	{	
+
+		$id = base64_decode($id_encoded);
 
 		$data = array(
 			'title' => 'Tagit | Product details',

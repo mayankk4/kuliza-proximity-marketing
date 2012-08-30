@@ -115,6 +115,8 @@ class Admin extends CI_Controller {
 			'url' => $_POST['url'],
 			'image_url' => $_POST['image_url'],
 			'description' => $_POST['description'],
+			'category' => $_POST['category'],
+			'objectType' => $_POST['objectType'],
 			);
 
 		if($this->PRODUCTS->create_product($data)){
@@ -156,6 +158,8 @@ class Admin extends CI_Controller {
 		$new_data = array(
 			'owner_id' => $_POST['owner_id'],
 			'product_id' => $_POST['product_id'],
+			'category' => $_POST['category'],
+			'objectType' => $_POST['objectType'],
 			'name' => $_POST['name'],
 			'url' => $_POST['url'],
 			'image_url' => $_POST['image_url'],

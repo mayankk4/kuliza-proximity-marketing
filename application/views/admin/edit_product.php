@@ -6,9 +6,12 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 	<p>Name        : <input type="text" id="name" /></p>
 	<p>Owner       : <input type="text" id="owner" /></p>
 	<p>Product Id  : <input type="text" id="product_id" /></p>
+	<p>Category    : <input type="text" id="category" /></p>
+	<p>Object Type : <input type="text" id="objectType" /></p>
 	<p>Website     : <input type="text" id="url" /></p>
 	<p>Image       : <input type="text" id="imagex" /></p>
 	<p>Description : <input type="text" id="description"></p>
+
 
 	<input type="button" value="UPDATE" id="update" />
 
@@ -27,6 +30,8 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
                     json_data = JSON.parse(data);
                     $("#name").val(json_data[0].name);
                     $("#owner").val(json_data[0].owner_id);
+                    $("#category").val(json_data[0].category);
+                    $("#objectType").val(json_data[0].objectType);
                     $("#product_id").val(json_data[0].product_id);
                     $("#description").val(json_data[0].description);
                     $("#url").val(json_data[0].url);
@@ -39,6 +44,8 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 
             	var name = $("#name").val();
             	var owner_id = $("#owner").val();
+            	var objectType = $("#objectType").val();
+            	var category = $("#category").val();
             	var product_id = $("#product_id").val();
             	var description = $("#description").val();
             	var url = $("#url").val();
@@ -47,7 +54,7 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 	            $.ajax({
 		            url: "/admin/update_product/",
 		            type: "POST",
-		        	data: { id: prod_id, owner_id: owner_id, product_id: product_id, name: name , url: url, image_url: image_url, description: description },
+		        	data: { id: prod_id, owner_id: owner_id, objectType: objectType, category: category, product_id: product_id, name: name , url: url, image_url: image_url, description: description },
 		            success: function(data){
 		            	if(data){
 			            	window.location = "/product/view/" + prod_id;

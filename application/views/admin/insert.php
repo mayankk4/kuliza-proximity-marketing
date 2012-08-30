@@ -6,9 +6,11 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 	<h1> Add new Product</h1>
 	<p>Name        : <input type="text" id="name" /></p>
 	<p>Owner       : <input type="text" id="owner" value="1" disabled="true" /></p>
+	<p>Category       : <input type="text" id="category" value="Electronics" disabled="true" /></p>
+	<p>Object Type       : <input type="text" id="objectType" value="product" disabled="true" /></p>
 	<p>Product Id  : <input type="text" id="product_id" /></p>
 	<p>Web Link     : <input type="text" id="url" value="http://" /></p>
-	<p>Image URL   : <input type="text" id="imagex"  value="http://yorktown.cbe.wwu.edu/sandvig/mis314/lectures/images/echo.jpg" /></p>
+	<p>Image URL   : <input type="text" id="imagex"  value="http://" /></p>
 	<p>Description : <input type="text" id="description"></p>
 
 	<input type="button" value="Create Product" id="create_product" />
@@ -28,6 +30,8 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 
             	var name = $("#name").val();
             	var owner_id = $("#owner").val();
+            	var category = $("#category").val();
+            	var objectType = $("#objectType").val();
             	var product_id = $("#product_id").val();
             	var description = $("#description").val();
             	var url = $("#url").val();
@@ -36,7 +40,7 @@ Hi, <strong><?php echo $username; ?></strong>! You are logged in now. <?php echo
 	            $.ajax({
 		            url: "/admin/create_product/",
 		            type: "POST",
-		        	data: { owner_id: owner_id, product_id: product_id, name: name , url: url, image_url: image_url, description: description },
+		        	data: { owner_id: owner_id, product_id: product_id, category: category, objectType: objectType, name: name , url: url, image_url: image_url, description: description },
 		            success: function(data){
 		            	if(data){
 			            	window.location = "/admin/listall";
