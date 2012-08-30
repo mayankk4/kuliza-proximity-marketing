@@ -134,7 +134,7 @@
 	                        product_id = json_data[0].product_id;
 		        	    	url = json_data[0].url;
 
-							var client_options = {
+							client_options = {
 								name : json_data[0].name,
 								category : json_data[0].category,
 								id : json_data[0].product_id,
