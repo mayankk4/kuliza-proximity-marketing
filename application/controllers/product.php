@@ -12,7 +12,11 @@ class Product extends CI_Controller {
 	public function view($id_encoded)
 	{	
 
-		$id = base64_decode($id_encoded);
+		try{
+			$id = base64_decode($id_encoded);
+		}catch(Exception $e){
+			redirect('/404');
+		}
 
 		$data = array(
 			'title' => 'Tagit | Product details',
@@ -24,9 +28,17 @@ class Product extends CI_Controller {
 	}
 
 
+	//////////////////// a j a x    h e l p e r s //////////////////////
+
 	public function get_product_details($id){
-		$data = $this->PRODUCTS->get_product(array('id'=>$id));
-		echo json_encode($data);
+
+		try{
+			$data = $this->PRODUCTS->get_product(array('id'=>$id));
+			echo json_encode($data);
+		}catch(Exception $e){
+			redirect('/404');
+		}
+		
 	}
 
 	public function get_owner_details($id){

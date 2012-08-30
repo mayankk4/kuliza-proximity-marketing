@@ -115,7 +115,11 @@
 	            cache: false,
 	            success: function(data){
 
-                    json_data = JSON.parse(data);
+                    try{
+						json_data = JSON.parse(data);					  }
+					catch(err){
+						window.location.href = "/404";
+					}
 
 		            jq.ajax({
 			            url: "/product/get_owner_details/"+json_data[0].owner_id,
