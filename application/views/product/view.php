@@ -83,7 +83,7 @@
 
 		var jq = jQuery.noConflict();
 		var base_url = "http://demo.echo.kuliza.com";
-
+		var product_url = "";
 		var client_options = {};
 
 	/////////////// sharma ////////////////
@@ -133,6 +133,7 @@
 
 	                        product_id = json_data[0].product_id;
 		        	    	url = json_data[0].url;
+		        	    	product_url = json_data[0].url;
 
 							client_options = {
 								name : json_data[0].name,

@@ -65,7 +65,7 @@ var ZS ={
     action : function() {
       // var product_url = window.location.href;
       var referrer = "magento.shoppul.se";
-      var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
+      //var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
       if(window.location.hash!=""){
         url = url.split(window.location.hash)[0];
       }
@@ -209,7 +209,7 @@ var ZS ={
     ZS.og_action = og_action;
     jq('.buttons_loader').show();
     // var product_url = window.location.href;
-    var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
+    // var product_url = "http://magento.shoppul.se/index.php/apparel/shoes/womens/anashria-womens-premier-leather-sandal.html";
     var frame = jq("#isLoggedIn_frame");
     if (frame.length == 0){
       jq('body').append('<iframe width="400" height="300" src="' + base_url + '/fshare/is_logged_in/?product_url=' + product_url + '&tag_it_url=' + window.location.href + '" id="isLoggedIn_frame" class="hidden"></iframe>');
