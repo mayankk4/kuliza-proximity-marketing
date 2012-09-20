@@ -21,7 +21,7 @@
 			<div class="productImageWrapper">
 				<div class="productImageDiv sectionWrapper">
 					<!-- VIDEO EMBED -->
-					<iframe width="420" height="315" src="http://www.youtube.com/embed/TgN6NlY_M7o?rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="http://www.youtube.com/embed/nzHxhFWTauw?rel=0" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 
