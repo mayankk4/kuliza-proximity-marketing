@@ -20,7 +20,8 @@
 		<div class="bodyWrapper">
 			<div class="productImageWrapper">
 				<div class="productImageDiv sectionWrapper">
-					<img src="" id="imagex" alt="Product-image">
+					<!-- VIDEO EMBED -->
+					<iframe width="420" height="315" src="http://www.youtube.com/embed/TgN6NlY_M7o?rel=0" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 
@@ -53,21 +54,9 @@
 					</li>
 
 					<li>
-						<a href="javascript:ZS.isLoggedIn('Want')" class="widgetButton buttonCompact  border-rad echo-buttons echo-button-Want" id="echo-button-27">
-							<img src="/static/img/want.png">
-							<span class="buttonText">Want</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:ZS.isLoggedIn('Own')" class="widgetButton buttonCompact border-rad">
+						<a href="javascript:ZS.isLoggedIn('WillWatch')" class="widgetButton buttonCompact border-rad">
 							<img src="/static/img/own.png">
-							<span class="buttonText">Own</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:ZS.isLoggedIn('Wear')" class="widgetButton buttonCompact border-rad">
-							<img src="/static/img/wearing.png">
-							<span class="buttonText">Wear</span>
+							<span class="buttonText">Will Watch</span>
 						</a>
 					</li>
 					<li class="echo-loader-li">
@@ -81,10 +70,31 @@
 	</body>
 	<script type="text/javascript">
 
+		////////// VARIABLES //////////
+
 		var jq = jQuery.noConflict();
 		var base_url = "http://demo.echo.kuliza.com";
-		var product_url = "";
-		var client_options = {};
+
+		var product_url = "http://magento.shoppul.se/index.php/sony-vaio-vgn-txn27n-b-11-1-notebook-pc.html";
+
+    	var product_id = "2071";
+    	var url = "http://magento.shoppul.se/index.php/sony-vaio-vgn-txn27n-b-11-1-notebook-pc.html";
+
+		var client_options = {
+			name : "Sony VAIO",
+			category : "Electronics",
+			id : "2071",
+			img : "SONY VAIO IMAGE URL",
+			objectType : "product",
+		};
+
+        jq("#owner").html("magento.shoppul.se");
+
+        jq("#name").html("Sony VAIO");
+        jq("#product_id").html("2071");
+        jq("#description").html("Take a load off your shoulders when you're racing for your plane with the sleekly designed and ultra-portable Sony Vaio VGN-TXN27N/B notebook PC.");
+        jq("#url").attr('href',"http://magento.shoppul.se/index.php/sony-vaio-vgn-txn27n-b-11-1-notebook-pc.html");
+
 
 	/////////////// sharma ////////////////
 		jq(function(){
@@ -103,55 +113,11 @@
 			changeHeight();	
 		});
 
-	/////////////// mayank ///////////////
+		/////////////// mayank //////////////////
+
+		// setting values for the video
+
 	    jq(document).ready(function() {
-
-	    	var product_id = "";
-	    	var url = "";
-
-            jq.ajax({
-	            url: "/product/get_product_details/<?php echo $id ?>",
-	            type: "GET",
-	            cache: false,
-	            success: function(data){
-
-                    try{
-						json_data = JSON.parse(data);					  }
-					catch(err){
-						window.location.href = "/404";
-					}
-
-		            jq.ajax({
-			            url: "/product/get_owner_details/"+json_data[0].owner_id,
-			            type: "GET",
-			            cache: false,
-			            success: function(data1){
-		                    json_data2 = JSON.parse(data1);
-		                    jq("#owner").html(json_data2[0].name);
-		
-		                    jq("#name").html(json_data[0].name);
-		                    jq("#product_id").html(json_data[0].product_id);
-		                    jq("#description").html(json_data[0].description);
-		                    jq("#url").attr('href',json_data[0].url);
-		                    jq("#imagex").attr('src',json_data[0].image_url);
-
-	                        product_id = json_data[0].product_id;
-		        	    	url = json_data[0].url;
-		        	    	product_url = json_data[0].url;
-
-							client_options = {
-								name : json_data[0].name,
-								category : json_data[0].category,
-								id : json_data[0].product_id,
-								img : "SONY VAIO IMAGE URL",
-								objectType : json_data[0].objectType
-							};
-
-		                }
-		            });
-
-                }
-            }); // end ajax call
 
 
 	/////////////// gupta ///////////////
@@ -184,12 +150,6 @@
 
 	}); // end ready
 
-
-
-
-
-
 	</script>
-
 
 </html>
