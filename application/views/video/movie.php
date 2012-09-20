@@ -54,7 +54,7 @@
 					</li>
 
 					<li>
-						<a href="javascript:ZS.isLoggedIn('WillWatch')" class="widgetButton buttonCompact border-rad">
+						<a href="javascript:ZS.isLoggedIn('will_watch')" class="widgetButton buttonCompact border-rad">
 							<img src="/static/img/own.png">
 							<span class="buttonText">Will Watch</span>
 						</a>

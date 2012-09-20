@@ -54,7 +54,7 @@
 					</li>
 
 					<li>
-						<a href="javascript:ZS.isLoggedIn('WillWatch')" class="widgetButton buttonCompact border-rad">
+						<a href="javascript:ZS.isLoggedIn('will_watch')" class="widgetButton buttonCompact border-rad">
 							<img src="/static/img/own.png">
 							<span class="buttonText">Will Watch</span>
 						</a>
@@ -92,7 +92,7 @@
 
         jq("#name").html("Dell Vostro 1440 Laptop");
         jq("#product_id").html("167");
-        jq("#description").html("Take a load off your shoulders when you're racing for your plane with the sleekly designed and ultra-portable Sony Vaio VGN-TXN27N/B notebook PC.");
+        jq("#description").html("Take a load off your shoulders when you're racing for your plane with the sleekly designed and ultra-portable Dell Vostro 1440 notebook PC.");
         jq("#url").attr('href',"http://magento.shoppul.se/index.php/electronics/computers/laptops/vostro-1440-laptop.html");
 
 
