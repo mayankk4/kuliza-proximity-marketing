@@ -25,7 +25,7 @@
 				</div>
 			</div>
 
-			<div class="productInfoWrapper">
+			<!-- div class="productInfoWrapper">
 				<div class="prductInfoDiv sectionWrapper">
 					<h1 class="productName pageHeading boldText" id="name"></h1>
 					<div class="productInfo">Product Id <span id="product_id" class="boldText"></span></div>
@@ -33,7 +33,7 @@
 					<div class="productSize"><a href="#" id="url" target="_blank">Go to WebSite</a></div>
 					<div class="productPrice" id="description"> </div>
 				</div>
-			</div>
+			</div -->
 
 		</div>
 		<div class="widgetWrapper">
@@ -87,14 +87,6 @@
         	img : "http://magento.shoppul.se/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/d/a/dark_knight_rises_poster.jpg",                    
         	objectType : "product"
         };
-
-
-        jq("#owner").html("magento.shoppul.se");
-
-        jq("#name").html("The Dark Knight Rises");
-        jq("#product_id").html("168");
-        jq("#description").html("Warner Bros. Pictures' and Legendary Pictures' is the epic conclusion to filmmaker Christopher Nolan's Batman trilogy, Leading an all-star international cast, Oscar(R) winner Christian Bale again plays the dual role of Bruce Wayne/Batman.");
-        jq("#url").attr('href',"http://magento.shoppul.se/index.php/movies/dvd/the-dark-knight-rises.html");
 
 
 	/////////////// sharma ////////////////
