@@ -6,7 +6,15 @@ class Video extends CI_Controller {
 		parent::__construct();
 	}
 
-	public function index()
+	public function index(){
+		$data = array(
+			'title' => 'Tagit | Product Videos Home',
+			'heading' => 'Product Video',
+		);
+		$this->load->view('video/index', $data);
+	}
+
+	public function view($id)
 	{
 
 		$data = array(
@@ -14,7 +22,11 @@ class Video extends CI_Controller {
 			'heading' => 'Product Video',
 		);
 
-		$this->load->view('video/index', $data);
+		if($id=="MQ=="){
+			$this->load->view('video/movie', $data);
+		}elseif($id=="Mg=="){
+			$this->load->view('video/dell', $data);			
+		}
 	}
 
 
